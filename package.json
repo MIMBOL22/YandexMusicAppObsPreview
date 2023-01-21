@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "find-in-files": "^0.5.0",
+        "request": "^2.88.2"
+    }
+}
