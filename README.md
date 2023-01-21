@@ -1,4 +1,8 @@
 # YandexMusicAppObsPreview
+Отображение трека, играющего в данный момент в OBS
+
+## Установка
+
 1. Установите [NodeJS](https://nodejs.org)
 2. Запустите install.bat (Установка)
 3. Создайте источник в OBS (текст)
