@@ -1,4 +1,4 @@
-const yamapi = require('./yamapi');
+const yamapi = require('yandexmusappapi');
 const fs = require('fs');
 
 function update() {
@@ -7,6 +7,7 @@ function update() {
             if (err) {
                 return console.log(err);
             }
+            console.clear();
             console.log("TXT updated");
         });
     })
