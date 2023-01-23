@@ -1,7 +1,25 @@
 {
-    "dependencies": {
-        "find-in-files": "^0.5.0",
-        "request": "^2.88.2",
-        "yandexmusappapi": "^1.0.1"
-    }
+  "dependencies": {
+    "find-in-files": "^0.5.0",
+    "request": "^2.88.2",
+    "yandexmusappapi": "^1.0.1"
+  },
+  "name": "yandexmusicappobspreview",
+  "description": "Отображение трека, играющего в данный момент в OBS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MIMBOL228/YandexMusicAppObsPreview.git"
+  },
+  "author": "MIMBOL <mim.bol@mail.ru>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/MIMBOL228/YandexMusicAppObsPreview/issues"
+  },
+  "homepage": "https://github.com/MIMBOL228/YandexMusicAppObsPreview#readme"
 }
