@@ -1,19 +1,31 @@
-var yamapi = require('yandexmusappapi');
-var fs = require('fs');
-var lastId;
+/*
+    Комментарии нацелены на человека, незнающего программирования.
+    Я попытался как можно подробнее расписать алгоритм программы, 
+    Чтобы можно было убедиться, что тут нет ничего зловредного.
+    Назначения остальных файлов:
+        .gitignore - системный файл, показывающий ненужные папки и файлы
+        install.bat - установка скрипта
+        LICENSE - Лицензия, рассказывает что можно, а что нельзя
+        obs.txt - Для OBS
+        package.json - Показывает, что нужно для нормальной работы скрипта
+        README.md - Инструкция
+        start.bat - Запуск работы скрипта
+    Господа сеньоры, пожалуйста, не кидайтесь камнями. 
+*/
+var yamapi = require('yandexmusappapi'); // Подключение к приложению
+var fs = require('fs'); // Говорим Windows, что наша программа также будет писать что-то в файлы
+var lastId; // Создаём ячейку в памяти, где мы будем хранить прошлую музыку
 
-function update() {
-    yamapi.getSong().then((obj) => {
-        if (lastId != obj.id) {
-            fs.writeFile("obs.txt", obj.author + " - " + obj.name, function(err) {
-                if (err) {
-                    return console.log(err);
-                }
-                console.clear();
-                console.log("TXT updated");
-                lastId = obj.id
+function update() { // Создаём функцию, которая обновляет TXT файл
+    yamapi.getSong().then((obj) => { // Спрашиваем приложение : "Какой трек сейчас играет?"
+        if (lastId != obj.id) { // Если трек изменился
+            fs.writeFile("obs.txt", obj.author + " - " + obj.name, function(err) { // Пишем в файл obs.txt автора и название песни
+                if (err) return console.log(err, obj); // Если возникает какая-то ошибка, пишем её
+                console.clear(); // Очищаем консоль, чтобы она не была засрана
+                console.log("Файл обновлён. Музыка: " + obj.author + " - " + obj.name); // Пишем, что файл обновлён и какая музыка
+                lastId = obj.id // Обновляем ячейку
             });
         }
     })
 }
-let timerId = setInterval(update, 1000);
+setInterval(update, 1000); // Говорим, что функцию update нужно выполнять каждую секунду (1000 миллисекунд)
