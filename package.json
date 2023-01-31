@@ -2,11 +2,11 @@
     "dependencies": {
         "find-in-files": "^0.5.0",
         "request": "^2.88.2",
-        "yandexmusappapi": "^1.1.0"
+        "yandexmusappapi": "^2.0.0"
     },
     "name": "yandexmusicappobspreview",
     "description": "Отображение трека, играющего в данный момент в OBS",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "main": "index.js",
     "devDependencies": {},
     "scripts": {
